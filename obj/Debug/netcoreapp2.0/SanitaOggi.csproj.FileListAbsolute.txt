@@ -1,0 +1,11 @@
+c:\users\administrator\source\repos\SanitaOggi\SanitaOggi\bin\Debug\netcoreapp2.0\SanitaOggi.deps.json
+c:\users\administrator\source\repos\SanitaOggi\SanitaOggi\bin\Debug\netcoreapp2.0\SanitaOggi.runtimeconfig.json
+c:\users\administrator\source\repos\SanitaOggi\SanitaOggi\bin\Debug\netcoreapp2.0\SanitaOggi.runtimeconfig.dev.json
+c:\users\administrator\source\repos\SanitaOggi\SanitaOggi\bin\Debug\netcoreapp2.0\SanitaOggi.dll
+c:\users\administrator\source\repos\SanitaOggi\SanitaOggi\bin\Debug\netcoreapp2.0\SanitaOggi.pdb
+c:\users\administrator\source\repos\SanitaOggi\SanitaOggi\obj\Debug\netcoreapp2.0\SanitaOggi.csproj.CoreCompileInputs.cache
+c:\users\administrator\source\repos\SanitaOggi\SanitaOggi\obj\Debug\netcoreapp2.0\SanitaOggi.AssemblyInfoInputs.cache
+c:\users\administrator\source\repos\SanitaOggi\SanitaOggi\obj\Debug\netcoreapp2.0\SanitaOggi.AssemblyInfo.cs
+c:\users\administrator\source\repos\SanitaOggi\SanitaOggi\obj\Debug\netcoreapp2.0\SanitaOggi.dll
+c:\users\administrator\source\repos\SanitaOggi\SanitaOggi\obj\Debug\netcoreapp2.0\SanitaOggi.pdb
+c:\users\administrator\source\repos\SanitaOggi\SanitaOggi\obj\Debug\netcoreapp2.0\SanitaOggi.csprojResolveAssemblyReference.cache

@@ -1,0 +1,41 @@
+﻿@page
+@model SanitaOggi.Pages.TipologiaAmbulatorio.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>TipoAmbulatorio</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TipoAmbulatorio.TipoAmbulatorioID" />
+            <div class="form-group">
+                <label asp-for="TipoAmbulatorio.CodiceTipo" class="control-label"></label>
+                <input asp-for="TipoAmbulatorio.CodiceTipo" class="form-control" />
+                <span asp-validation-for="TipoAmbulatorio.CodiceTipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoAmbulatorio.NomeTipo" class="control-label"></label>
+                <input asp-for="TipoAmbulatorio.NomeTipo" class="form-control" />
+                <span asp-validation-for="TipoAmbulatorio.NomeTipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
