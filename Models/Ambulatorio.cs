@@ -13,11 +13,15 @@ namespace SanitaOggi.Models
         public string AmbulatorioID { get; set; }
 
         [Required]
-        [Display(Name = "Tipo")]
-        public string CodTipo { get; set; }
+        [Display(Name = "Nome Ambulatorio")]
+        public string Nome { get; set; }
+
+        [Required]
+        [Display(Name = "Tipo Ambulatorio")]
+        public string NomeTipo { get; set; }
 
         [Required]
         [Display(Name = "Struttura")]
-        public string CodStruttura { get; set; }
+        public string NomeStruttura { get; set; }
     }
 }

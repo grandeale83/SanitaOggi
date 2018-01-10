@@ -11,9 +11,10 @@ using System;
 namespace SanitaOggi.Migrations
 {
     [DbContext(typeof(SanitaContext))]
-    partial class SanitaContextModelSnapshot : ModelSnapshot
+    [Migration("20171220144144_AddRiferimentiInAmbulatoion")]
+    partial class AddRiferimentiInAmbulatoion
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,37 +26,27 @@ namespace SanitaOggi.Migrations
                     b.Property<string>("AmbulatorioID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("CodStruttura")
                         .IsRequired();
 
-                    b.Property<string>("NomeStruttura")
+                    b.Property<string>("CodTipo")
                         .IsRequired();
 
-                    b.Property<string>("NomeTipo")
-                        .IsRequired();
+                    b.Property<int>("StrutturaID");
+
+                    b.Property<string>("StrutturaID1");
+
+                    b.Property<int>("TipoAmbulatorioID");
+
+                    b.Property<string>("TipoAmbulatorioID1");
 
                     b.HasKey("AmbulatorioID");
 
+                    b.HasIndex("StrutturaID1");
+
+                    b.HasIndex("TipoAmbulatorioID1");
+
                     b.ToTable("Ambulatorio");
-                });
-
-            modelBuilder.Entity("SanitaOggi.Models.Esame", b =>
-                {
-                    b.Property<int>("EsameID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CodiceEsame")
-                        .IsRequired();
-
-                    b.Property<string>("NomeEsame")
-                        .IsRequired();
-
-                    b.Property<string>("NomeTipo")
-                        .IsRequired();
-
-                    b.HasKey("EsameID");
-
-                    b.ToTable("Esame");
                 });
 
             modelBuilder.Entity("SanitaOggi.Models.Struttura", b =>
@@ -88,6 +79,17 @@ namespace SanitaOggi.Migrations
                     b.HasKey("TipoAmbulatorioID");
 
                     b.ToTable("TipoAmbulatorio");
+                });
+
+            modelBuilder.Entity("SanitaOggi.Models.Ambulatorio", b =>
+                {
+                    b.HasOne("SanitaOggi.Models.Struttura", "Struttura")
+                        .WithMany()
+                        .HasForeignKey("StrutturaID1");
+
+                    b.HasOne("SanitaOggi.Models.TipoAmbulatorio", "TipoAmbulatorio")
+                        .WithMany()
+                        .HasForeignKey("TipoAmbulatorioID1");
                 });
 #pragma warning restore 612, 618
         }

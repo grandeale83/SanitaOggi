@@ -13125,11 +13125,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "c:\\users\\administrator\\source\\repos\\SanitaOggi\\SanitaOggi\\SanitaOggi.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\SanitaOggi\\SanitaOggi\\SanitaOggi.csproj",
       "projectName": "SanitaOggi",
-      "projectPath": "c:\\users\\administrator\\source\\repos\\SanitaOggi\\SanitaOggi\\SanitaOggi.csproj",
+      "projectPath": "C:\\Users\\Administrator\\source\\repos\\SanitaOggi\\SanitaOggi\\SanitaOggi.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "c:\\users\\administrator\\source\\repos\\SanitaOggi\\SanitaOggi\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\source\\repos\\SanitaOggi\\SanitaOggi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

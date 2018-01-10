@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SanitaOggi.Models;
 
-namespace SanitaOggi.Pages.Ambulatori
+namespace SanitaOggi.Pages.Esami
 {
     public class EditModel : PageModel
     {
@@ -20,36 +20,24 @@ namespace SanitaOggi.Pages.Ambulatori
         }
 
         [BindProperty]
-        public Ambulatorio Ambulatorio { get; set; }
+        public Esame Esame { get; set; }
 
-        public SelectList NomiStrutture; // Per prendere la lista dei nomi delle strutture
         public SelectList NomiTipoAmbulatori; // Per prendere la lista dei nomi delle tipi di ambulatorio
-
-        public async Task<IActionResult> OnGetAsync(string id)
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            Ambulatorio = await _context.Ambulatorio.SingleOrDefaultAsync(m => m.AmbulatorioID == id);
+            Esame = await _context.Esame.SingleOrDefaultAsync(m => m.EsameID == id);
 
-            if (Ambulatorio == null)
+            if (Esame == null)
             {
                 return NotFound();
             }
-            /*
-             * Non si riesce a caricare sia per le strutture che per
-             * i tipi di ambulatorio l'abbinamento tra chiave-codice
-             * e nome, in modo da usarli nella dropdownlist (tag select)
-             * come valore e testo. L'obbiettivo sarebbe stato di usare 
-             * il nome nella view, ma la chiave-codice nel db.
-             */
-            IQueryable<string> queryNomiStrutture = from m in _context.Struttura
-                                                    orderby m.NomeStruttura
-                                                    select m.NomeStruttura;
-            NomiStrutture = new SelectList(await queryNomiStrutture.ToListAsync());
             IQueryable<string> queryNomiTipoAmbulatori = from m in _context.TipoAmbulatorio
+                                                         orderby m.NomeTipo
                                                          select m.NomeTipo;
             NomiTipoAmbulatori = new SelectList(await queryNomiTipoAmbulatori.ToListAsync());
             return Page();
@@ -62,7 +50,7 @@ namespace SanitaOggi.Pages.Ambulatori
                 return Page();
             }
 
-            _context.Attach(Ambulatorio).State = EntityState.Modified;
+            _context.Attach(Esame).State = EntityState.Modified;
 
             try
             {

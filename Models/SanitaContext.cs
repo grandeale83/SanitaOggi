@@ -15,5 +15,6 @@ namespace SanitaOggi.Models
         public DbSet<Struttura> Struttura { get; set; }
         public DbSet<TipoAmbulatorio> TipoAmbulatorio { get; set; }
         public DbSet<Ambulatorio> Ambulatorio { get; set; }
+        public DbSet<SanitaOggi.Models.Esame> Esame { get; set; }
     }
 }

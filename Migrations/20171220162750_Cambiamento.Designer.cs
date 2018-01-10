@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using SanitaOggi.Models;
 using System;
@@ -11,9 +10,10 @@ using System;
 namespace SanitaOggi.Migrations
 {
     [DbContext(typeof(SanitaContext))]
-    partial class SanitaContextModelSnapshot : ModelSnapshot
+    [Migration("20171220162750_Cambiamento")]
+    partial class Cambiamento
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,37 +25,15 @@ namespace SanitaOggi.Migrations
                     b.Property<string>("AmbulatorioID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("CodStruttura")
                         .IsRequired();
 
-                    b.Property<string>("NomeStruttura")
-                        .IsRequired();
-
-                    b.Property<string>("NomeTipo")
+                    b.Property<string>("CodTipo")
                         .IsRequired();
 
                     b.HasKey("AmbulatorioID");
 
                     b.ToTable("Ambulatorio");
-                });
-
-            modelBuilder.Entity("SanitaOggi.Models.Esame", b =>
-                {
-                    b.Property<int>("EsameID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CodiceEsame")
-                        .IsRequired();
-
-                    b.Property<string>("NomeEsame")
-                        .IsRequired();
-
-                    b.Property<string>("NomeTipo")
-                        .IsRequired();
-
-                    b.HasKey("EsameID");
-
-                    b.ToTable("Esame");
                 });
 
             modelBuilder.Entity("SanitaOggi.Models.Struttura", b =>
